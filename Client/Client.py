@@ -39,6 +39,7 @@ class service:
                             if check == 'AUSER':
                                 #add user to current active
                                 print(x)
+                                self.client.send(bytes(('REAUSER: ' + self.user), 'utf-8'))
                                 if x == 'root':
                                     self.root = True
                                 else:
@@ -55,36 +56,52 @@ class service:
                                 #print(self.sally)
                                 #print(self.qiang)
                             else:
-                                if check == 'RUSER':
-                                    #remove user from current active
-                                    #print('hereC')
+                                if check == 'REAUSER':
+                                    #readd user to current active
+                                    #ment to catch existing users that have already logged in
+                                    print(x)
                                     if x == 'root':
-                                        self.root = False
+                                        self.root = True
                                     else:
                                         if x == 'john':
-                                            self.john = False
+                                            self.john = True
                                         else:
                                             if x == 'sally':
-                                                self.sally = False
+                                                self.sally = True
                                             else:
                                                 if x == 'qiang':
-                                                    self.qiang = False
+                                                    self.qiang = True
                                 else:
-                                    if check == 'MSG':
-                                        #check if message is a confirm ID check
-                                        target, str = x.split(':')
-                                        #print(target)
-                                        #print(str)
-                                        #print(user)
-                                        if self.user == target:
-                                            #print('here')
-                                            #send back a confirm
-                                            #client.send(bytes('CONFIRM', 'utf-8'))
-                                            #print str to client
-                                            print('MSG from ' + target + ':')
-                                            print(str)
+                                    if check == 'RUSER':
+                                        #remove user from current active
+                                        #print('hereC')
+                                        if x == 'root':
+                                            self.root = False
+                                        else:
+                                            if x == 'john':
+                                                self.john = False
+                                            else:
+                                                if x == 'sally':
+                                                    self.sally = False
+                                                else:
+                                                    if x == 'qiang':
+                                                        self.qiang = False
                                     else:
-                                        print(msg)
+                                        if check == 'MSG':
+                                            #check if message is a confirm ID check
+                                            target, str = x.split(':')
+                                            #print(target)
+                                            #print(str)
+                                            #print(user)
+                                            if self.user == target:
+                                                #print('here')
+                                                #send back a confirm
+                                                #client.send(bytes('CONFIRM', 'utf-8'))
+                                                #print str to client
+                                                print('MSG from ' + target + ':')
+                                                print(str)
+                                        else:
+                                            print(msg)
                     except:
                         print(msg)
             except:

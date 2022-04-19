@@ -382,8 +382,12 @@ def commands(client, shutdowning):
                                         else:
                                             client.send('SERVER: Must be logged in to MSG'.encode('ascii'))
                                     else:
-                                        print('300 Invalid Command')
-                                        client.send('SERVER: 300 Invalid Command'.encode('ascii'))
+                                        if lhs == 'REAUSER:':
+                                            tar, x = rhs.split(' ', 1)
+                                            broadcast('REAUSER:' + tar)
+                                        else:
+                                            print('300 Invalid Command')
+                                            client.send('SERVER: 300 Invalid Command'.encode('ascii'))
             except:
                 print('!CIRTICAL ERROR!')
                 print(msg)
