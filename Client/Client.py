@@ -38,7 +38,7 @@ class service:
                         else:
                             if check == 'AUSER':
                                 #add user to current active
-                                print(x)
+                                #print(x)
                                 self.client.send(bytes(('REAUSER: ' + self.user), 'utf-8'))
                                 if x == 'root':
                                     self.root = True
@@ -59,7 +59,7 @@ class service:
                                 if check == 'REAUSER':
                                     #readd user to current active
                                     #ment to catch existing users that have already logged in
-                                    print(x)
+                                    #print(x)
                                     if x == 'root':
                                         self.root = True
                                     else:
