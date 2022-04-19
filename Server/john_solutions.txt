@@ -1,0 +1,6 @@
+SOLVE -c 5
+Circle`s circumference  is 31.42 and area is 78.54
+SOLVE -r 3
+Square`s perimeter is 12.0 and area is 9.0
+SOLVE -r 1 1
+SOLVE -r 2 3

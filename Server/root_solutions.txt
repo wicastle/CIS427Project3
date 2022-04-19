@@ -1,0 +1,10 @@
+SOLVE -r 1
+Square`s perimeter is 4.0 and area is 1.0
+SOLVE - r 2 3
+SOLVE -r 2 2
+SOLVE -r 1 w
+SOLVE -r 1 2
+SOLVE -r 2 3
+Rectangle`s perimeter is 10.0 and area is 6.0
+SOLVE -r 2
+Square`s perimeter is 8.0 and area is 4.0
